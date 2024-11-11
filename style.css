@@ -1,0 +1,220 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    color: #333; /* Texto em cinza escuro */
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    color: #f9f9f9;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+nav ul li a {
+    color: #f9f9f9;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Seção Sobre Mim com imagem */
+#sobre {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+#sobre .sobre-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#sobre img {
+    width: 180px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid #333;
+    transition: transform 0.3s;
+}
+
+#sobre img:hover {
+    transform: scale(1.1);
+}
+
+/* Seção Projetos */
+#projetos {
+    padding: 3rem 1rem;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#projetos h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+#projetos .projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colunas que se ajustam ao espaço disponível */
+    gap: 2rem; /* Espaço entre os projetos */
+    width: 100%;
+    max-width: 1200px; /* Limita a largura total da grade para melhor visualização */
+    margin: 0 auto; /* Centraliza a grade na página */
+}
+
+#projetos article {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projetos article:hover {
+    transform: translateY(-5px);
+}
+
+#projetos img {
+    width: 100%; /* Imagem ocupa a largura total do artigo */
+    height: auto;
+    max-width: 300px; /* Limita a largura máxima da imagem */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#projetos a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#projetos a:hover {
+    color: #666;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    #projetos .projetos-grid {
+        grid-template-columns: 1fr; /* Empilha os projetos verticalmente em telas pequenas */
+    }
+}
+
+
+/* Seção Contato */
+#contato {
+    padding: 3rem 1rem;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea, button {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #333;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #f9f9f9;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+#redesSociais a {
+    color: #ddd;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#redesSociais a:hover {
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    #sobre .sobre-conteudo {
+        flex-direction: column;
+    }
+}
+/* Ajuste para o fade-in */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#projetos article, #sobre img, #sobre p {
+    opacity: 1; /* Definir para visível inicialmente */
+    transform: translateY(0); /* Definir a posição inicial */
+}
+
+/* Tornar os elementos invisíveis apenas para o efeito de rolagem */
+.hidden-before-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+}
